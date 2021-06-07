@@ -5,7 +5,7 @@ function App() {
 
   //state
   const [state, setStete] = useState({
-    name: "",
+    name: "default",
     message: "...",
   });
 
