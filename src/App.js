@@ -20,7 +20,7 @@ function App() {
 
   return (
     <div style={{ padding: 30 }}>
-      <h1>Form</h1>
+      <h1>Form1</h1>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
