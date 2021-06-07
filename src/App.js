@@ -22,7 +22,7 @@ function App() {
 
   //api call
   const handleClick = async () => {
-    const result = await axios.get("/api/getData?name=0001");
+    const result = await axios.get(`/api/getData?name=${state.name}`);
     setStete({ ...state, message: result.data })
   }
 
