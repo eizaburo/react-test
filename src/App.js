@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 
 function App() {
 
   //state
   const [state, setStete] = useState({
     name: "",
+    message: "...",
   });
 
   //change
@@ -16,6 +18,12 @@ function App() {
   const handleSubmit = e => {
     e.preventDefault();
     alert(state.name);
+  }
+
+  //api call
+  const handleClick = async () => {
+    const result = await axios.get("/api/getData?name=0001");
+    setStete({ ...state, message: result.data })
   }
 
   return (
@@ -30,6 +38,8 @@ function App() {
         />
         <input type="submit" value="push" />
       </form>
+      <button onClick={handleClick}>api</button>
+      <p>message:{state.message}</p>
     </div>
   );
 }
